@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Letters implements IPritableToConsole {
 
-	private List<Character> letters;
+	private ArrayList<Character> letters;
 
 	public Letters(ArrayList<Character> letters) {
 		this.letters = letters;
@@ -20,4 +20,7 @@ public class Letters implements IPritableToConsole {
 
 	}
 
+    public ArrayList<Character> getLetters() {
+		return letters;
+    }
 }

@@ -47,22 +47,28 @@ public class GespeeldeQuiz {
         return new Letters(letters);
     }
 
-
-    private Vraag getVraag(int index) {
-        return null;
-    }
-
-
     public void verwerkReactie(String reactie) {
 
+        switch(quizState) {
+            case VRAGEN:
+                verwerkAntwoord(reactie);
+                break;
+            case LETTERS:
+                verwerkGemaaktWoord(reactie);
+                break;
+            default:
+                // code block
+        }
     }
 
     private void verwerkAntwoord(String antwoord) {
-
+        Vraag huidigeVraag = quiz.getVraag(vraagIndex);
+        vraagIndex++;
+        spelerAntwoorden.add(new SpelerAntwoord(antwoord, huidigeVraag));
     }
 
     private void verwerkGemaaktWoord(String gemaaktWoord) {
-
+        woord = new Woord(gemaaktWoord, letters);
     }
 
     public int getScore() {
