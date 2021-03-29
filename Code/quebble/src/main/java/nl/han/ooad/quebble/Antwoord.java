@@ -9,11 +9,7 @@ public abstract class Antwoord {
 	}
 
 	public boolean isGelijk(String antwoord) {
-		if (antwoord.equals(this.antwoord)){
-			return true;
-		}else {
-			return false;
-		}
+		return antwoord.equals(this.antwoord);
 	}
 
 	public String getAntwoord() {
