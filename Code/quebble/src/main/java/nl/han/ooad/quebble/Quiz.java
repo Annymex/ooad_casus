@@ -11,11 +11,7 @@ public class Quiz {
 	}
 
 	public boolean heeftNogEenVraag (int index){
-		if (vragen.size() > index){
-			return true;
-		} else {
-			return false;
-		}
+		return vragen.size() > index;
 	}
 
 	public Vraag getVraag(int index) {
