@@ -16,4 +16,8 @@ public abstract class Vraag implements IPritableToConsole {
 	public String getVraag() {
 		return vraag;
 	}
+
+	public char getLetter() {
+		return letter;
+	}
 }
