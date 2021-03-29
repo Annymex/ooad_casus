@@ -2,6 +2,8 @@ package nl.han.ooad.quebble;
 
 public class KortAntwoordVraag extends Vraag {
 
-	private KortAntwoordVraagAntwoord[] kortAntwoordVraagAntwoord;
-
+	@Override
+	public void printToConsole() {
+		System.out.println( "Vraag: " + vraag );
+	}
 }
