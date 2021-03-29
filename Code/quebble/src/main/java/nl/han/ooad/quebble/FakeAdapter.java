@@ -1,4 +1,6 @@
-public class ...Adapter implements WoordControleur {
+package nl.han.ooad.quebble;
+
+public class FakeAdapter implements WoordControleur {
 
 	private WoordControleLibrary woordControleLibrary;
 

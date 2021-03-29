@@ -1,10 +1,10 @@
+package nl.han.ooad.quebble;
+
 public class Woord implements IPritableToConsole {
 
 	private String woord;
 
 	private boolean isCorrect;
-
-	private Letter[] letter;
 
 	private WoordControleur woordControleur;
 

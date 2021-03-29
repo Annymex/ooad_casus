@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3d2ef4a-da4c-4b02-a2af-a48f657e9f46" name="Default Changelist" comment="" />
+    <list default="true" id="b3d2ef4a-da4c-4b02-a2af-a48f657e9f46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/...Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/FakeAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Antwoord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Antwoord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/GeografieCategorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/GeografieCategorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/GespeeldeQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/GespeeldeQuiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/IPritableToConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/IPritableToConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/KortAntwoordVraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/KortAntwoordVraag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Letter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Letters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Letters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MeerkeuzeAntwoord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MeerkeuzeAntwoord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MeerkeuzeVraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MeerkeuzeVraag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MuziekCategorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/MuziekCategorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/QuebbleConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/QuebbleConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/QuebbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/QuebbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/ScoreCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/ScoreCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Speler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Speler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/SpelerAntwoord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/SpelerAntwoord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/SportCategorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/SportCategorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/StandaardBerekeningsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/StandaardBerekeningsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Vraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Vraag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Woord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/Woord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/WoordControleLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/WoordControleLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/WoordControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/WoordControleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/kortAntwoordVraagAntwoord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ooad/quebble/KortAntwoordVraagAntwoord.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,15 +56,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -50,6 +77,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617021736896</updated>
       <workItem from="1617021738347" duration="216000" />
+      <workItem from="1617021989773" duration="260000" />
+      <workItem from="1617022262456" duration="309000" />
     </task>
     <servers />
   </component>
@@ -66,5 +95,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

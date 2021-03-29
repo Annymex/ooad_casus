@@ -1,3 +1,5 @@
+package nl.han.ooad.quebble;
+
 public class Speler {
 
 	private int gebruikersnaam;
