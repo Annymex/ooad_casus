@@ -1,6 +1,10 @@
+package nl.han.ooad.quebble;
+
+import java.util.List;
+
 public class Letters implements IPritableToConsole {
 
-	private List<char> letters;
+	private List<Character> letters;
 
 
 	/**

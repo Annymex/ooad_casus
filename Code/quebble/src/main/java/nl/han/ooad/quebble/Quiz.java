@@ -1,3 +1,5 @@
+package nl.han.ooad.quebble;
+
 public class Quiz {
 
 	private Vraag[] vraag;

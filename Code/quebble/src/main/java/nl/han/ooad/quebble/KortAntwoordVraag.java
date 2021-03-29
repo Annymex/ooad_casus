@@ -1,5 +1,7 @@
+package nl.han.ooad.quebble;
+
 public class KortAntwoordVraag extends Vraag {
 
-	private kortAntwoordVraagAntwoord[] kortAntwoordVraagAntwoord;
+	private KortAntwoordVraagAntwoord[] kortAntwoordVraagAntwoord;
 
 }

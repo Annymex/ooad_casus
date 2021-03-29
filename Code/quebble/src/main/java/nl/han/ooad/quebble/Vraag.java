@@ -1,3 +1,5 @@
+package nl.han.ooad.quebble;
+
 public class Vraag implements IPritableToConsole {
 
 	private boolean actief;
@@ -5,8 +7,6 @@ public class Vraag implements IPritableToConsole {
 	private char letter;
 
 	private Quiz[] quiz;
-
-	private Letter letter;
 
 	private Categorie categorie;
 
