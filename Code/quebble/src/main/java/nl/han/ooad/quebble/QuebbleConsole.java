@@ -15,6 +15,8 @@ public class QuebbleConsole {
 		System.out.print("Geef gebruikersnaam: ");
 		huidigeSpeler = scanner.nextLine();
 
+		quebbleGame.startQuebble(huidigeSpeler);
+
 		while( quebbleGame.nogEenActie(huidigeSpeler) ){
 			quebbleGame.getActie(huidigeSpeler).printToConsole();
 			quebbleGame.verwerkReactie( huidigeSpeler, scanner.nextLine() );
