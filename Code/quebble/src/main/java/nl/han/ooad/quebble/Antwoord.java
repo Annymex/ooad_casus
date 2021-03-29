@@ -1,6 +1,6 @@
 package nl.han.ooad.quebble;
 
-public class Antwoord {
+public abstract class Antwoord {
 
 	private String antwoord;
 

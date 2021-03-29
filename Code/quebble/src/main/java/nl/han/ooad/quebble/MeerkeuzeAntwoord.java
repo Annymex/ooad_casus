@@ -8,4 +8,8 @@ public class MeerkeuzeAntwoord extends Antwoord {
 		super(antwoord);
 		this.isCorrect = isCorrect;
 	}
+
+	public boolean isCorrect(){
+		return isCorrect;
+	}
 }
