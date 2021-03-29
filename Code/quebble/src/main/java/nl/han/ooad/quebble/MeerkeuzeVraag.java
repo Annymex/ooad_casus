@@ -1,6 +1,12 @@
 package nl.han.ooad.quebble;
 
+import java.util.ArrayList;
+
 public class MeerkeuzeVraag extends Vraag {
+
+	public MeerkeuzeVraag(String vraag, char letter, ArrayList<Antwoord> antwoorden) {
+		super(vraag, letter, antwoorden);
+	}
 
 	@Override
 	public boolean controleerAntwoord(String gegevenAntwoord) {

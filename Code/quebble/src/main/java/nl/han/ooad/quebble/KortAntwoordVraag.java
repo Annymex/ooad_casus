@@ -1,6 +1,12 @@
 package nl.han.ooad.quebble;
 
+import java.util.ArrayList;
+
 public class KortAntwoordVraag extends Vraag {
+
+	public KortAntwoordVraag(String vraag, char letter, ArrayList<Antwoord> antwoorden) {
+		super(vraag, letter, antwoorden);
+	}
 
 	@Override
 	public boolean controleerAntwoord(String gegevenAntwoord) {

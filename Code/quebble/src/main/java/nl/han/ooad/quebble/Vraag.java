@@ -10,6 +10,14 @@ public abstract class Vraag implements IPritableToConsole {
 	private Categorie categorie;
 	protected ArrayList<Antwoord> antwoorden;
 
+	public Vraag(String vraag, char letter, ArrayList<Antwoord> antwoorden) {
+		this.vraag = vraag;
+		this.letter = letter;
+		this.antwoorden = antwoorden;
+		categorie = null;
+		actief = true;
+	}
+
 	public abstract boolean controleerAntwoord(String gegevenAntwoord);
 	public abstract void printToConsole();
 
@@ -19,5 +27,13 @@ public abstract class Vraag implements IPritableToConsole {
 
 	public char getLetter() {
 		return letter;
+	}
+
+	public void setActief(boolean actief) {
+		this.actief = actief;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 }

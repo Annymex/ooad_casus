@@ -12,7 +12,6 @@ public class QuebbleGame {
 	}
 
 	public boolean nogEenActie(String username) {
-
 		Speler speler = repo.getSpeler(username);
 		speler.nogEenActie();
 	}
