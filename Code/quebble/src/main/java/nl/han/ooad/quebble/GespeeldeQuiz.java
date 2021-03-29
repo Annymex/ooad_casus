@@ -1,28 +1,47 @@
 package nl.han.ooad.quebble;
 
+import java.util.ArrayList;
+
 public class GespeeldeQuiz {
 
 	private int datum;
-
 	private int speelduur;
-
 	private int score;
-
+	private int vraagIndex;
+	private QuizState quizState;
 	private Woord woord;
-
 	private Quiz quiz;
 
+
 	private SpelerAntwoord spelerAntwoord;
-
 	private ScoreBerekeningsStrategy scoreBerekeningsStrategy;
-
-	private WoordControleur woordControleur;
-
 	private Letters letters;
 
-	public IPritableToConsole getActie() {
-		return null;
+
+	public GespeeldeQuiz(Quiz quiz) {
+		this.quiz = quiz;
+		this.vraagIndex = 0;
+		this.quizState = QuizState.VRAGEN;
 	}
+
+
+	public IPritableToConsole getActie() {
+		IPritableToConsole actie;
+		switch(quizState){
+			case VRAGEN:
+				actie = quiz.getVraag(vraagIndex);
+				break;
+			case LETTERS:
+				actie = getLetters();
+				break;
+			default:
+				actie = null;
+		}
+		return actie;
+	}
+
+
+
 
 	private Vraag getVraag(int index) {
 		return null;
