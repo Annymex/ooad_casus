@@ -14,7 +14,7 @@ public class GespeeldeQuiz {
 
 	private SpelerAntwoord spelerAntwoord;
 
-	private ScoreCalculator scoreCalculator;
+	private ScoreBerekeningsStrategy scoreBerekeningsStrategy;
 
 	private WoordControleur woordControleur;
 
