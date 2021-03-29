@@ -4,38 +4,42 @@ import java.util.ArrayList;
 
 public class Speler {
 
-	private int gebruikersnaam;
+    private String gebruikersnaam;
+    private String wachtwoord;
+    private int saldo;
+    private ArrayList<GespeeldeQuiz> gespeeldeQuizen;
+    private GespeeldeQuiz actieveQuiz;
 
-	private int wachtwoord;
-
-	private int saldo;
-
-	private ArrayList<GespeeldeQuiz> gespeeldeQuizen;
-
-	private GespeeldeQuiz actieveQuiz;
+	public Speler(String gebruikersnaam, String wachtwoord, int saldo ) {
+		this.gebruikersnaam = gebruikersnaam;
+		this.wachtwoord = wachtwoord;
+		this.saldo = saldo;
+	}
 
 	public boolean checkVoldoendeSaldo(int bedrag) {
-		return saldo > bedrag;
-	}
+        return saldo > bedrag;
+    }
+    public void schrijfSaldoAf(int bedrag) {
+        saldo -= bedrag;
+    }
 
-	public void schrijfSaldoAf(int bedrag) {
-		saldo -= bedrag;
-	}
+    public void startQuiz(Quiz quiz) {
+        actieveQuiz = new GespeeldeQuiz(quiz);
+    }
 
-	public void startQuiz(Quiz quiz) {
-		actieveQuiz = new GespeeldeQuiz(quiz);
-	}
+    public IPritableToConsole getActie() {
+        return actieveQuiz.getActie();
+    }
 
-	public IPritableToConsole getActie() {
-		return actieveQuiz.getActie();
-	}
+    public void verwerkReactie(String reactie) {
+        actieveQuiz.verwerkReactie(reactie);
+    }
 
-	public void verwerkReactie(String reactie) {
-		actieveQuiz.verwerkReactie(reactie);
-	}
+    public int getScore() {
+        return actieveQuiz.getScore();
+    }
 
-	public int getScore() {
-		return actieveQuiz.getScore();
+	public String getGebruikersnaam() {
+		return gebruikersnaam;
 	}
-
 }

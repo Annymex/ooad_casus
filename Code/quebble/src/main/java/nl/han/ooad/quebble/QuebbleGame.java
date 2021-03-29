@@ -5,13 +5,16 @@ public class QuebbleGame {
 	private Speler[] speler;
 
 	private Quiz[] quiz;
+	private QuebbleRepository repo;
 
 	public void startQuebble(String username) {
 
 	}
 
 	public boolean nogEenActie(String username) {
-		return false;
+
+		Speler speler = repo.getSpeler(username);
+		speler.nogEenActie();
 	}
 
 	public IPritableToConsole getActie(String username) {
