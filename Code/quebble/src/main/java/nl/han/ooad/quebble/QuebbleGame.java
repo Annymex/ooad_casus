@@ -2,38 +2,28 @@ package nl.han.ooad.quebble;
 
 public class QuebbleGame {
 
-	private Speler[] speler;
-
-	private Quiz[] quiz;
-	private QuebbleRepository repo;
+	private QuebbleRepository repo = new QuebbleRepository();
 
 	public void startQuebble(String username) {
-
+		var speler = repo.getSpeler(username);
+		var quiz = repo.getGeschikteQuiz(speler);
+		speler.startQuiz(quiz);
 	}
 
 	public boolean nogEenActie(String username) {
-		Speler speler = repo.getSpeler(username);
-		speler.nogEenActie();
+		return repo.getSpeler(username).nogEenActie();
 	}
 
 	public IPritableToConsole getActie(String username) {
-		return null;
+		return repo.getSpeler(username).getActie();
 	}
 
 	public void verwerkReactie(String username, String reactie) {
-
+		repo.getSpeler(username).verwerkReactie(reactie);
 	}
 
 	public int getScore(String username) {
-		return 0;
-	}
-
-	private Speler getSpeler(String username) {
-		return null;
-	}
-
-	private Quiz selecteerGeschikteQuiz(Speler speler) {
-		return null;
+		return repo.getSpeler(username).getScore();
 	}
 
 }

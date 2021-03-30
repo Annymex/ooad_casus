@@ -16,9 +16,13 @@ public class Speler {
 		this.saldo = saldo;
 	}
 
-	public boolean checkVoldoendeSaldo(int bedrag) {
+    public boolean nogEenActie() {
+        return actieveQuiz.nogEenActie();
+	}
+    public boolean checkVoldoendeSaldo(int bedrag) {
         return saldo > bedrag;
     }
+
     public void schrijfSaldoAf(int bedrag) {
         saldo -= bedrag;
     }

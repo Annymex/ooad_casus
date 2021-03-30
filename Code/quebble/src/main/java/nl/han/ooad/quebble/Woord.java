@@ -1,45 +1,26 @@
 package nl.han.ooad.quebble;
 
 import java.util.ArrayList;
-import java.util.stream.Collector;
 
-public class Woord implements IPritableToConsole {
+public class Woord {
 
-	private String woord;
+    private final String woord;
 
-	private boolean isCorrect;
+    private final boolean isCorrect;
 
-	private WoordControleur woordControleur;
+    private final WoordControleur woordControleur = new FakeWoordControleAdapter();
 
-	private Letters letters;
+    public Woord(String gemaaktWoord, Letters letters) {
+        this.woord = gemaaktWoord;
+		isCorrect = controleerWoord() && controleerLetters(letters.getLetters());
+    }
 
-	public Woord(String gemaaktWoord, Letters letters) {
-		this.woord = gemaaktWoord;
-		if (controleerWoord() && controleerLetters(letters.getLetters())){
-			isCorrect = true;
-		} else {
-			isCorrect = false;
-		}
+    private boolean controleerWoord() {
+        return woordControleur.controleerWoordBestaat(woord);
+    }
 
-
-	}
-
-	private boolean controleerWoord() {
-		return woordControleur.controleerWoordBestaat(woord);
-	}
-
-	private boolean controleerLetters(ArrayList<Character> letters) {
-		return !woord.chars().mapToObj(character -> (char) character)
-				.anyMatch(character -> !letters.contains(character));
-	}
-
-
-	/**
-	 * @see IPritableToConsole#printToConsole()
-	 *  
-	 */
-	public void printToConsole() {
-
-	}
-
+    private boolean controleerLetters(ArrayList<Character> letters) {
+        return !woord.chars().mapToObj(character -> (char) character)
+                .anyMatch(character -> !letters.contains(character));
+    }
 }

@@ -19,6 +19,12 @@ public class GespeeldeQuiz {
         this.quiz = quiz;
         this.vraagIndex = 0;
         this.quizState = QuizState.VRAGEN;
+        this.spelerAntwoorden = new ArrayList<>();
+        this.scoreBerekening = new StandaardBerekeningsStrategy();
+    }
+
+    public boolean nogEenActie() {
+        return !quizState.equals( QuizState.SCORE );
     }
 
     public IPritableToConsole getActie() {
@@ -43,7 +49,6 @@ public class GespeeldeQuiz {
                     }
                 }
         );
-
         return new Letters(letters);
     }
 
@@ -56,23 +61,26 @@ public class GespeeldeQuiz {
             case LETTERS:
                 verwerkGemaaktWoord(reactie);
                 break;
-            default:
-                // code block
         }
     }
 
     private void verwerkAntwoord(String antwoord) {
+        // verwerken antwoord
         Vraag huidigeVraag = quiz.getVraag(vraagIndex);
         vraagIndex++;
         spelerAntwoorden.add(new SpelerAntwoord(antwoord, huidigeVraag));
+        // controleren of gamestate verandert moet worden
+        if(quiz.isLaatsteVraag(vraagIndex)){
+            this.quizState = QuizState.LETTERS;
+        }
     }
 
     private void verwerkGemaaktWoord(String gemaaktWoord) {
-        woord = new Woord(gemaaktWoord, letters);
+        this.woord = new Woord(gemaaktWoord, letters);
+        this.quizState = QuizState.SCORE;
     }
 
     public int getScore() {
-        return 0;
+        return scoreBerekening.berekenScore(this);
     }
-
 }

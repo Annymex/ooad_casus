@@ -18,4 +18,7 @@ public class Quiz {
 		return vragen.get(index);
 	}
 
+	public boolean isLaatsteVraag(int vraagIndex) {
+		return vraagIndex == vragen.size();
+	}
 }

@@ -1,32 +1,29 @@
 package nl.han.ooad.quebble;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class QuebbleConsole {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		String huidigeSpeler;
-		QuebbleGame quebbleGame = new QuebbleGame();
+        String huidigeSpeler;
+        QuebbleGame quebbleGame = new QuebbleGame();
 
-		Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Geef gebruikersnaam: ");
-		huidigeSpeler = scanner.nextLine();
+        System.out.print("Geef gebruikersnaam: ");
+        huidigeSpeler = scanner.nextLine();
 
-		quebbleGame.startQuebble(huidigeSpeler);
+        quebbleGame.startQuebble(huidigeSpeler);
 
-		while( quebbleGame.nogEenActie(huidigeSpeler) ){
-			quebbleGame.getActie(huidigeSpeler).printToConsole();
-			quebbleGame.verwerkReactie( huidigeSpeler, scanner.nextLine() );
-		}
+        while (quebbleGame.nogEenActie(huidigeSpeler)) {
+            quebbleGame.getActie(huidigeSpeler).printToConsole();
+            quebbleGame.verwerkReactie(huidigeSpeler, scanner.nextLine());
+        }
 
-		System.out.println( "Score: " + quebbleGame.getScore(huidigeSpeler));
+        System.out.println("Score: " + quebbleGame.getScore(huidigeSpeler));
 
-	}
-
-
+    }
 
 }
 
