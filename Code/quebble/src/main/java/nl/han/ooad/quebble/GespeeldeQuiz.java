@@ -7,7 +7,6 @@ public class GespeeldeQuiz {
 
     private int datum;
     private int speelduur;
-    private int score;
     private int vraagIndex;
     private QuizState quizState;
     private Woord woord;
@@ -29,25 +28,20 @@ public class GespeeldeQuiz {
     }
 
     public IPritableToConsole getActie() {
-        IPritableToConsole actie;
-        if (quiz.heeftNogEenVraag(vraagIndex)) {
-            actie = quiz.getVraag(vraagIndex);
-        } else {
-            letters = getLetters();
-            actie = letters;
-            this.quizState = QuizState.LETTERS;
+
+        IPritableToConsole actie = null;
+
+        switch (quizState) {
+            case VRAGEN:
+                actie = quiz.getVraag(vraagIndex);
+                break;
+            case LETTERS:
+                actie = getLetters();
+                this.quizState = QuizState.LETTERS;
+                break;
         }
+
         return actie;
-    }
-
-    private Letters getLetters() {
-
-        ArrayList<Character> letters = spelerAntwoorden.stream()
-                .filter(SpelerAntwoord::isCorrect)
-                .map(SpelerAntwoord::getLetter)
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        return new Letters(letters);
     }
 
     public void verwerkReactie(String reactie) {
@@ -62,13 +56,17 @@ public class GespeeldeQuiz {
         }
     }
 
+    public int getScore() {
+        return scoreBerekening.berekenScore(this);
+    }
+
     private void verwerkAntwoord(String antwoord) {
         // verwerken antwoord
         Vraag huidigeVraag = quiz.getVraag(vraagIndex);
         vraagIndex++;
         spelerAntwoorden.add(new SpelerAntwoord(antwoord, huidigeVraag));
         // controleren of gamestate verandert moet worden
-        if (quiz.isLaatsteVraag(vraagIndex)) {
+        if (!quiz.heeftNogEenVraag(vraagIndex)) {
             this.quizState = QuizState.LETTERS;
         }
     }
@@ -78,7 +76,13 @@ public class GespeeldeQuiz {
         this.quizState = QuizState.SCORE;
     }
 
-    public int getScore() {
-        return scoreBerekening.berekenScore(this);
+    private Letters getLetters() {
+
+        ArrayList<Character> letters = spelerAntwoorden.stream()
+                .filter(SpelerAntwoord::isCorrect)
+                .map(SpelerAntwoord::getLetter)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        return new Letters(letters);
     }
 }

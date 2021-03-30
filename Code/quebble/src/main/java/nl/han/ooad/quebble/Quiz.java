@@ -10,15 +10,12 @@ public class Quiz {
 		this.vragen = vragen;
 	}
 
-	public boolean heeftNogEenVraag (int index){
-		return vragen.size() > index;
-	}
-
 	public Vraag getVraag(int index) {
 		return vragen.get(index);
 	}
 
-	public boolean isLaatsteVraag(int vraagIndex) {
-		return vraagIndex == vragen.size();
+	public boolean heeftNogEenVraag (int index){
+		return vragen.size() > index;
 	}
+
 }
