@@ -1,6 +1,7 @@
 package nl.han.ooad.quebble;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class GespeeldeQuiz {
 
@@ -10,9 +11,9 @@ public class GespeeldeQuiz {
     private int vraagIndex;
     private QuizState quizState;
     private Woord woord;
-    private Quiz quiz;
-    private ArrayList<SpelerAntwoord> spelerAntwoorden;
-    private ScoreBerekeningsStrategy scoreBerekening;
+    private final Quiz quiz;
+    private final ArrayList<SpelerAntwoord> spelerAntwoorden;
+    private final ScoreBerekeningsStrategy scoreBerekening;
     private Letters letters;
 
     public GespeeldeQuiz(Quiz quiz) {
@@ -24,7 +25,7 @@ public class GespeeldeQuiz {
     }
 
     public boolean nogEenActie() {
-        return !quizState.equals( QuizState.SCORE );
+        return !quizState.equals(QuizState.SCORE);
     }
 
     public IPritableToConsole getActie() {
@@ -41,20 +42,17 @@ public class GespeeldeQuiz {
 
     private Letters getLetters() {
 
-        ArrayList<Character> letters = new ArrayList<>();
+        ArrayList<Character> letters = spelerAntwoorden.stream()
+                .filter(SpelerAntwoord::isCorrect)
+                .map(SpelerAntwoord::getLetter)
+                .collect(Collectors.toCollection(ArrayList::new));
 
-        spelerAntwoorden.forEach(spelerAntwoord -> {
-                    if (spelerAntwoord.isCorrect()) {
-                        letters.add(spelerAntwoord.getLetter());
-                    }
-                }
-        );
         return new Letters(letters);
     }
 
     public void verwerkReactie(String reactie) {
 
-        switch(quizState) {
+        switch (quizState) {
             case VRAGEN:
                 verwerkAntwoord(reactie);
                 break;
@@ -70,7 +68,7 @@ public class GespeeldeQuiz {
         vraagIndex++;
         spelerAntwoorden.add(new SpelerAntwoord(antwoord, huidigeVraag));
         // controleren of gamestate verandert moet worden
-        if(quiz.isLaatsteVraag(vraagIndex)){
+        if (quiz.isLaatsteVraag(vraagIndex)) {
             this.quizState = QuizState.LETTERS;
         }
     }
