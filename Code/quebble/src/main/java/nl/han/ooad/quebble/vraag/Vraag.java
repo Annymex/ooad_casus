@@ -1,8 +1,12 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.vraag;
+
+import nl.han.ooad.quebble.IPrintableToConsole;
+import nl.han.ooad.quebble.vraag.Antwoord;
+import nl.han.ooad.quebble.vraag.Categorie;
 
 import java.util.ArrayList;
 
-public abstract class Vraag implements IPritableToConsole {
+public abstract class Vraag implements IPrintableToConsole {
 
 	protected String vraag;
 	private boolean actief;

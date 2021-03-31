@@ -1,4 +1,6 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.vraag;
+
+import nl.han.ooad.quebble.vraag.Antwoord;
 
 public class KortAntwoordVraagAntwoord extends Antwoord {
 

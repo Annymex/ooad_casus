@@ -1,5 +1,7 @@
 package nl.han.ooad.quebble;
 
+import nl.han.ooad.quebble.vraag.Vraag;
+
 import java.util.ArrayList;
 
 public class Quiz {

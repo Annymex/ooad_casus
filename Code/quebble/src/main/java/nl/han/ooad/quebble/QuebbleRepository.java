@@ -1,5 +1,7 @@
 package nl.han.ooad.quebble;
 
+import nl.han.ooad.quebble.vraag.*;
+
 import java.util.ArrayList;
 
 public class QuebbleRepository {
@@ -90,11 +92,11 @@ public class QuebbleRepository {
         antwoorden7.add(new KortAntwoordVraagAntwoord("The Tories"));
         vragen.add(new KortAntwoordVraag(vraag7, letter7, antwoorden7));
 
-        String vraag8 = "Wat stad ligt in twee continenten?";
+        String vraag8 = "Welke stad ligt in twee continenten?";
         Character letter8 = 'I';
         ArrayList<Antwoord> antwoorden8 = new ArrayList<>();
         antwoorden8.add(new KortAntwoordVraagAntwoord("Instanboel"));
-        antwoorden8.add(new KortAntwoordVraagAntwoord(" Instanbul"));
+        antwoorden8.add(new KortAntwoordVraagAntwoord("Instanbul"));
         vragen.add(new KortAntwoordVraag(vraag8, letter8, antwoorden8));
 
         quizen.add(new Quiz(vragen));

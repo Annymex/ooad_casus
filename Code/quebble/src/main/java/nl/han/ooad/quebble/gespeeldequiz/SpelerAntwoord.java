@@ -1,4 +1,6 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.gespeeldequiz;
+
+import nl.han.ooad.quebble.vraag.Vraag;
 
 public class SpelerAntwoord {
 

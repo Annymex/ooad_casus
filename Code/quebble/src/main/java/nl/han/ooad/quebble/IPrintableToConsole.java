@@ -1,6 +1,6 @@
 package nl.han.ooad.quebble;
 
-public interface IPritableToConsole {
+public interface IPrintableToConsole {
 
 	void printToConsole();
 

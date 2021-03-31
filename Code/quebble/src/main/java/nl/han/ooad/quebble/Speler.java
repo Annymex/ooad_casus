@@ -1,5 +1,7 @@
 package nl.han.ooad.quebble;
 
+import nl.han.ooad.quebble.gespeeldequiz.GespeeldeQuiz;
+
 import java.util.ArrayList;
 
 public class Speler {
@@ -31,7 +33,7 @@ public class Speler {
         actieveQuiz = new GespeeldeQuiz(quiz);
     }
 
-    public IPritableToConsole getActie() {
+    public IPrintableToConsole getActie() {
         return actieveQuiz.getActie();
     }
 

@@ -1,4 +1,4 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.vraag;
 
 import java.util.ArrayList;
 

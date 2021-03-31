@@ -1,10 +1,11 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.gespeeldequiz;
+
+import nl.han.ooad.quebble.IPrintableToConsole;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
-public class Letters implements IPritableToConsole {
+public class Letters implements IPrintableToConsole {
 
 	private ArrayList<Character> letters;
 
@@ -20,6 +21,5 @@ public class Letters implements IPritableToConsole {
     public ArrayList<Character> getLetters() {
 		return letters;
     }
-
 
 }

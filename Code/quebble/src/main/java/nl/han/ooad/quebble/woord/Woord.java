@@ -1,4 +1,6 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.woord;
+
+import nl.han.ooad.quebble.gespeeldequiz.Letters;
 
 import java.util.ArrayList;
 

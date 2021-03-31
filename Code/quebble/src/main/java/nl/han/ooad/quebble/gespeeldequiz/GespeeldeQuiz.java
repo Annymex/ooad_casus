@@ -1,42 +1,55 @@
-package nl.han.ooad.quebble;
+package nl.han.ooad.quebble.gespeeldequiz;
 
+import nl.han.ooad.quebble.IPrintableToConsole;
+import nl.han.ooad.quebble.Quiz;
+import nl.han.ooad.quebble.score.ScoreBerekeningsStrategy;
+import nl.han.ooad.quebble.score.StandaardBerekeningsStrategy;
+import nl.han.ooad.quebble.vraag.Vraag;
+import nl.han.ooad.quebble.woord.Woord;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class GespeeldeQuiz {
 
-    private int datum;
-    private int speelduur;
-    private int vraagIndex;
-    private QuizState quizState;
-    private Woord woord;
     private final Quiz quiz;
     private final ArrayList<SpelerAntwoord> spelerAntwoorden;
-    private final ScoreBerekeningsStrategy scoreBerekening;
+    private final LocalDate datum;
+    private final LocalDateTime start;
+    private ScoreBerekeningsStrategy scoreBerekeningsStrategy;
+    private LocalDateTime eind;
+    private int vraagIndex;
+    private QuizState quizState;
+    private Woord gemaaktWoord;
     private Letters letters;
 
     public GespeeldeQuiz(Quiz quiz) {
         this.quiz = quiz;
         this.vraagIndex = 0;
         this.quizState = QuizState.VRAGEN;
+        this.start = LocalDateTime.now();
+        this.datum = LocalDate.now();
         this.spelerAntwoorden = new ArrayList<>();
-        this.scoreBerekening = new StandaardBerekeningsStrategy();
+        this.scoreBerekeningsStrategy = new StandaardBerekeningsStrategy();
     }
 
     public boolean nogEenActie() {
         return !quizState.equals(QuizState.SCORE);
     }
 
-    public IPritableToConsole getActie() {
+    public IPrintableToConsole getActie() {
 
-        IPritableToConsole actie = null;
+        IPrintableToConsole actie = null;
 
         switch (quizState) {
             case VRAGEN:
                 actie = quiz.getVraag(vraagIndex);
                 break;
             case LETTERS:
-                actie = getLetters();
+                this.letters = getLetters();
+                actie = letters;
                 this.quizState = QuizState.LETTERS;
                 break;
         }
@@ -57,7 +70,11 @@ public class GespeeldeQuiz {
     }
 
     public int getScore() {
-        return scoreBerekening.berekenScore(this);
+        return scoreBerekeningsStrategy.berekenScore(this);
+    }
+
+    public void setScoreBerekeningStrategy(ScoreBerekeningsStrategy scoreBerekeningStrategy) {
+        this.scoreBerekeningsStrategy = scoreBerekeningStrategy;
     }
 
     private void verwerkAntwoord(String antwoord) {
@@ -72,7 +89,8 @@ public class GespeeldeQuiz {
     }
 
     private void verwerkGemaaktWoord(String gemaaktWoord) {
-        this.woord = new Woord(gemaaktWoord, letters);
+        this.gemaaktWoord = new Woord(gemaaktWoord, letters);
+        this.eind = LocalDateTime.now();
         this.quizState = QuizState.SCORE;
     }
 
@@ -84,5 +102,17 @@ public class GespeeldeQuiz {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         return new Letters(letters);
+    }
+
+    public ArrayList<SpelerAntwoord> getSpelerAntwoorden() {
+        return this.spelerAntwoorden;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public LocalDateTime getEind() {
+        return eind;
     }
 }

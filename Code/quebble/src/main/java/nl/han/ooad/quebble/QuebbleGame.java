@@ -14,7 +14,7 @@ public class QuebbleGame {
 		return repo.getSpeler(username).nogEenActie();
 	}
 
-	public IPritableToConsole getActie(String username) {
+	public IPrintableToConsole getActie(String username) {
 		return repo.getSpeler(username).getActie();
 	}
 

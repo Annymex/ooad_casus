@@ -16,6 +16,10 @@ public class QuebbleConsole {
 
         quebbleGame.startQuebble(huidigeSpeler);
 
+        System.out.println( System.lineSeparator() +
+                "Bij meerkeuzevragen moet het antwoord overgenomen worden zonder voorafgaande letter." +
+                System.lineSeparator());
+
         while (quebbleGame.nogEenActie(huidigeSpeler)) {
             quebbleGame.getActie(huidigeSpeler).printToConsole();
             quebbleGame.verwerkReactie(huidigeSpeler, scanner.nextLine());
