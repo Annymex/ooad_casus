@@ -6,21 +6,22 @@ import java.util.ArrayList;
 
 public class Speler {
 
-    private String gebruikersnaam;
-    private String wachtwoord;
+    private final String gebruikersnaam;
+    private final String wachtwoord;
     private int saldo;
     private ArrayList<GespeeldeQuiz> gespeeldeQuizen;
     private GespeeldeQuiz actieveQuiz;
 
-	public Speler(String gebruikersnaam, String wachtwoord, int saldo ) {
-		this.gebruikersnaam = gebruikersnaam;
-		this.wachtwoord = wachtwoord;
-		this.saldo = saldo;
-	}
+    public Speler(String gebruikersnaam, String wachtwoord, int saldo) {
+        this.gebruikersnaam = gebruikersnaam;
+        this.wachtwoord = wachtwoord;
+        this.saldo = saldo;
+    }
 
     public boolean nogEenActie() {
         return actieveQuiz.nogEenActie();
-	}
+    }
+
     public boolean checkVoldoendeSaldo(int bedrag) {
         return saldo > bedrag;
     }
@@ -45,7 +46,4 @@ public class Speler {
         return actieveQuiz.getScore();
     }
 
-	public String getGebruikersnaam() {
-		return gebruikersnaam;
-	}
 }

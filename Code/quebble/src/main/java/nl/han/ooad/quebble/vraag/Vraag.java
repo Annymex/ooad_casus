@@ -33,11 +33,4 @@ public abstract class Vraag implements IPrintableToConsole {
 		return letter;
 	}
 
-	public void setActief(boolean actief) {
-		this.actief = actief;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
 }

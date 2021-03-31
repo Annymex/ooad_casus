@@ -18,12 +18,13 @@ public class GespeeldeQuiz {
     private final ArrayList<SpelerAntwoord> spelerAntwoorden;
     private final LocalDate datum;
     private final LocalDateTime start;
-    private ScoreBerekeningsStrategy scoreBerekeningsStrategy;
     private LocalDateTime eind;
+    private ScoreBerekeningsStrategy scoreBerekeningsStrategy;
     private int vraagIndex;
     private QuizState quizState;
     private Woord gemaaktWoord;
     private Letters letters;
+    private int score;
 
     public GespeeldeQuiz(Quiz quiz) {
         this.quiz = quiz;
@@ -70,7 +71,8 @@ public class GespeeldeQuiz {
     }
 
     public int getScore() {
-        return scoreBerekeningsStrategy.berekenScore(this);
+        this.score = scoreBerekeningsStrategy.berekenScore(this);
+        return score;
     }
 
     public void setScoreBerekeningStrategy(ScoreBerekeningsStrategy scoreBerekeningStrategy) {
@@ -104,15 +106,4 @@ public class GespeeldeQuiz {
         return new Letters(letters);
     }
 
-    public ArrayList<SpelerAntwoord> getSpelerAntwoorden() {
-        return this.spelerAntwoorden;
-    }
-
-    public LocalDateTime getStart() {
-        return start;
-    }
-
-    public LocalDateTime getEind() {
-        return eind;
-    }
 }

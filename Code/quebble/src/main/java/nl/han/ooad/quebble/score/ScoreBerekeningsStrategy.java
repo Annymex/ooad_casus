@@ -4,6 +4,6 @@ import nl.han.ooad.quebble.gespeeldequiz.GespeeldeQuiz;
 
 public interface ScoreBerekeningsStrategy {
 
-	public int berekenScore(GespeeldeQuiz quiz);
+	int berekenScore(GespeeldeQuiz quiz);
 
 }
