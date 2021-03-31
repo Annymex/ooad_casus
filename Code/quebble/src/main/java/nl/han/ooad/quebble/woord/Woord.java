@@ -10,7 +10,7 @@ public class Woord {
 
     private final boolean isCorrect;
 
-    private final WoordControleur woordControleur = new FakeWoordControleAdapter();
+    private final WoordControleur woordControleur = new VoorbeeldWoordControleLibraryAdapter();
 
     public Woord(String gemaaktWoord, Letters letters) {
         this.woord = gemaaktWoord;
